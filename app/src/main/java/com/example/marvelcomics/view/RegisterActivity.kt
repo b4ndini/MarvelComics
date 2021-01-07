@@ -13,6 +13,14 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+
+        /*btLogin.setOnClickListener(){
+            val intent = Intent(this, RestaurantActivity::class.java)
+            startActivity(intent)
+        }*/
+
     }
 
 

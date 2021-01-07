@@ -2,6 +2,6 @@
 <resources>
     <dimen name="border">15dp</dimen>
     <dimen name="main_margin">22dp</dimen>
-    <dimen name="welcome_text">28sp</dimen>
+    <dimen name="welcome_text">25sp</dimen>
     <dimen name="welcome_top_margin">15dp</dimen>
 </resources>

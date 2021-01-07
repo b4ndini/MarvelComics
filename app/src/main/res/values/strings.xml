@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Marvel Comics</string>
-    <string name="welcome_text">Welcome to the Marvel HQ's</string>
+    <string name="welcome_text">Welcome to the Marvel HQs</string>
     <string name="login">LOG IN</string>
-    <string name="login">LOG IN</string>
+    <string name="comics_summary">sjdoijasdoisjadoijsadiojsaiodjsaoidjsioajdoisajdosiajdoisajdijasodjsaoiasdhsauidhsauidhsaiudsuiagdsgyadyigsuyadgqygwegyqwugyewgewgyqeuwgqeuwgyqeugywquegwquyegwquyegwqugewgyeuywgqeuywgqeugqwegwqeyguwgeuwgeuywgqegwquyegwquygewqgeqdjsiaojdiosjadoiasjdoisajdosa</string>
+    <string name="comics_title">Titulo Titulo Titulo Titulo Titulo Titulo Titulo</string>
+
 </resources>

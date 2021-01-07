@@ -9,8 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MarvelComics">
-        <activity android:name=".view.RegisterActivity"></activity>
+        <activity android:name=".view.ComicsPictureActivity"></activity>
+        <activity android:name=".view.ComicsDetailActivity" />
+        <activity android:name=".view.ComicsActivity" />
         <activity android:name=".view.WelcomeActivity" />
+        <activity android:name=".view.RegisterActivity" />
         <activity
             android:name=".view.SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">

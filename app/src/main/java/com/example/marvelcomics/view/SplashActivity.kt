@@ -10,7 +10,7 @@ import com.example.marvelcomics.databinding.ActivitySplashBinding
 
 class SplashActivity : AppCompatActivity() {
 
-    private val splashTimeout: Long = 8000
+    private val splashTimeout: Long = 2000
     private lateinit var binding: ActivitySplashBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,7 +22,7 @@ class SplashActivity : AppCompatActivity() {
 
     private fun navigateToMainActivity() {
         Handler().postDelayed({
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, WelcomeActivity::class.java))
             finish()
         }, splashTimeout)
     }

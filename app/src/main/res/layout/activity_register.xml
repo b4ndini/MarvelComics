@@ -9,6 +9,43 @@
 
 
     <ImageView
+        android:id="@+id/ivActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/action_bar"
+        android:scaleType="fitXY"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <ImageView
+        app:layout_constraintTop_toTopOf="@id/ivActionBar"
+        app:layout_constraintBottom_toBottomOf="@id/ivActionBar"
+        android:id="@+id/ivSeta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_action_seta"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintEnd_toStartOf="@id/tvRegister"
+        app:layout_constraintStart_toStartOf="@id/ivLoginBackground"/>
+
+
+    <TextView
+        android:id="@+id/tvRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/white"
+        android:text="Register"
+        app:layout_constraintEnd_toStartOf="@id/ivCircle"
+        app:layout_constraintTop_toTopOf="@id/ivActionBar"
+        app:layout_constraintBottom_toBottomOf="@id/ivActionBar"
+        />
+
+
+    <ImageView
+        app:layout_constraintVertical_bias="0.8"
         android:id="@+id/ivLoginBackground"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -45,6 +82,7 @@
         app:boxBackgroundColor="@color/white"
         app:boxStrokeColor="@color/light_red"
         app:layout_constraintStart_toStartOf="@id/ivLogin"
+        app:layout_constraintEnd_toEndOf="@id/ivLogin"
         app:layout_constraintTop_toTopOf="@id/ivLogin"
 
         >
@@ -69,6 +107,7 @@
         app:boxBackgroundColor="@color/white"
         app:boxStrokeColor="@color/light_red"
         app:layout_constraintStart_toStartOf="@id/ivLogin"
+        app:layout_constraintEnd_toEndOf="@id/ivLogin"
         app:layout_constraintTop_toBottomOf="@id/tilName"
 
 
@@ -94,6 +133,7 @@
         app:boxBackgroundColor="@color/white"
         app:boxStrokeColor="@color/light_red"
         app:layout_constraintStart_toStartOf="@id/ivLogin"
+        app:layout_constraintEnd_toEndOf="@id/ivLogin"
         app:layout_constraintTop_toBottomOf="@id/tilEmail"
 
 
@@ -111,19 +151,21 @@
 
 
 
-
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnSave"
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/main_margin"
+        android:layout_marginStart="32dp"
         android:layout_marginBottom="5dp"
-        android:layout_marginEnd="@dimen/main_margin"
+        android:layout_marginEnd="32dp"
         android:text="Save"
+
         android:textColor="@color/white"
         android:textSize="18sp"
         app:backgroundTint="@color/light_red"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
         app:layout_constraintEnd_toEndOf="@id/ivLogin"
         app:layout_constraintStart_toStartOf="@id/ivLogin"
        app:layout_constraintBottom_toBottomOf="@id/ivLoginBackground" />

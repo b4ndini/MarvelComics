@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    tools:context=".view.ComicsDetailActivity">
+
+
+    <ImageView
+        android:id="@+id/ivBackgroundImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitStart"
+        android:src="@drawable/landscape_incredible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivSeta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/ic_action_seta"
+        app:layout_constraintStart_toStartOf="@id/ivBackgroundImage"
+        app:layout_constraintTop_toTopOf="@id/ivBackgroundImage" />
+
+    <ImageView
+        android:id="@+id/ivComics"
+        android:layout_width="130dp"
+        android:layout_height="205dp"
+        android:layout_marginTop="20dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/portrait_fantastic"
+        app:layout_constraintStart_toStartOf="@id/ivSeta"
+        app:layout_constraintTop_toBottomOf="@id/ivSeta" />
+
+    <TextView
+        android:id="@+id/tvComicsTitle"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/comics_title"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/ivSeta"
+        app:layout_constraintTop_toBottomOf="@+id/ivComics" />
+
+    <TextView
+        android:id="@+id/tvComicsSummary"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/comics_summary"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/ivSeta"
+        app:layout_constraintTop_toBottomOf="@id/tvComicsTitle"
+
+        />
+
+    <TextView
+        android:id="@+id/tvPublished"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Published: April 30, 2014"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/ivSeta"
+        app:layout_constraintTop_toBottomOf="@id/tvComicsSummary"
+
+        />
+
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price: $ 6,66"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/ivSeta"
+        app:layout_constraintTop_toBottomOf="@id/tvPublished" />
+
+    <TextView
+        android:id="@+id/tvPages"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pages: 38"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/ivSeta"
+        app:layout_constraintTop_toBottomOf="@id/tvPrice" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

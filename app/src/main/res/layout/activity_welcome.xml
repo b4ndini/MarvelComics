@@ -24,6 +24,7 @@
         android:id="@+id/ivLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:paddingStart="@dimen/main_margin"
         android:paddingEnd="@dimen/main_margin"
         android:scaleType="fitXY"
@@ -32,12 +33,13 @@
         app:layout_constraintStart_toStartOf="@id/ivLoginBackground" />
 
     <TextView
+        android:maxLines="1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/welcome_top_margin"
         android:text="@string/welcome_text"
         android:textColor="@color/white"
-        android:textSize="@dimen/welcome_text"
+        android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="@id/ivLoginBackground"
         app:layout_constraintStart_toStartOf="@id/ivLoginBackground"
         app:layout_constraintTop_toTopOf="@id/ivLoginBackground" />
@@ -108,9 +110,9 @@
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/main_margin"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="@dimen/main_margin"
         android:text="@string/login"
         android:textColor="@color/white"
         android:textSize="18sp"
@@ -120,17 +122,18 @@
         app:layout_constraintTop_toBottomOf="@id/cbRemember" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnAccount"
+        android:id="@+id/btnRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/main_margin"
         android:layout_marginEnd="@dimen/main_margin"
         android:shadowColor="@color/white"
         android:text="Create Account"
+
         android:textAllCaps="false"
         android:textColor="@color/grey"
         android:textSize="18sp"
-        app:backgroundTint="@color/white"
+        style="?android:attr/borderlessButtonStyle"
         app:layout_constraintEnd_toEndOf="@id/ivLogin"
         app:layout_constraintStart_toStartOf="@id/ivLogin"
         app:layout_constraintTop_toBottomOf="@id/btnLogin" />

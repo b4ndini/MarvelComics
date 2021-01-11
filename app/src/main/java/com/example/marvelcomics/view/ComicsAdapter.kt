@@ -3,6 +3,8 @@ package com.example.marvelcomics.view
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+
 import com.example.marvelcomics.databinding.ComicItemBinding
 import com.example.marvelcomics.model.Result
 
@@ -18,6 +20,7 @@ class ComicsAdapter(val comicsList: List<Result>) : RecyclerView.Adapter<ComicsA
 
     override fun onBindViewHolder(holder: ComicsAdapter.ViewHolder, position: Int) {
         holder.bind(comic = comicsList[position])
+
     }
 
     override fun getItemCount(): Int {
@@ -29,9 +32,9 @@ class ComicsAdapter(val comicsList: List<Result>) : RecyclerView.Adapter<ComicsA
 
         fun bind(comic : Result):Unit = with(itemView){
 
-
+            val imagem : String = comic.thumbnail.path + "/portrait_xlarge" + comic.thumbnail.extension
             binding.tvEdition.text = comic.title
-            //Glide.with(itemView.context).load(comic.img).into(binding.ivComicImage)
+            Glide.with(itemView.context).load(imagem).into(binding.ivComicImage)
 
         }
     }

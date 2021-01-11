@@ -20,7 +20,7 @@ class   ComicsViewModel : ViewModel(){
         viewModelScope.launch{
         when(val response = comicsBusiness.getComics()){
                 is ResponseApi.Success -> {
-                    comicsLiveData.postValue( response.data as? Comics )
+                    comicsLiveData.postValue(response.dado as? Comics )
                 }
                 is ResponseApi.Error -> {
                     errorMessageLiveData.postValue(response.msg)

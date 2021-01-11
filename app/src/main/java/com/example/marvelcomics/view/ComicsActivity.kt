@@ -35,7 +35,7 @@ class ComicsActivity : AppCompatActivity() {
     fun setupObservables() {
         viewModel.comicsLiveData.observe(this,{
             it?.let { comics ->
-                setupRecyclerView(comics.dado.results)
+                setupRecyclerView(comics.data.results)
             }
         })
     }

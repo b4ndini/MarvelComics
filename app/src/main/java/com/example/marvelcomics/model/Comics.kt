@@ -8,7 +8,7 @@ data class Comics(
     val code: Int,
     val copyright: String,
     @SerializedName("data")
-    val dado: Data,
+    val data: Data,
     val etag: String,
     val status: String
 )

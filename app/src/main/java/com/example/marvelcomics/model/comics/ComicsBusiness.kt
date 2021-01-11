@@ -18,9 +18,4 @@ class ComicsBusiness {
     }
 
 
-    /*fun getComics() : List<Comics>{
-       return repo.getComics()
-
-   }*/
-
 }

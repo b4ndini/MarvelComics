@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.marvelcomics.databinding.ActivityComicsBinding
+import com.example.marvelcomics.model.Comics
 import com.example.marvelcomics.model.Result
 import com.example.marvelcomics.viewModel.ComicsViewModel
 
@@ -35,14 +36,14 @@ class ComicsActivity : AppCompatActivity() {
     fun setupObservables() {
         viewModel.comicsLiveData.observe(this,{
             it?.let { comics ->
-                setupRecyclerView(comics.data.results)
+                setupRecyclerView(comics.data.results)     //pega os dados da api
             }
         })
     }
 
      fun setupRecyclerView(quadrinhos: List<Result>) {
         binding.rvComicsList.apply{
-            layoutManager = LinearLayoutManager(this@ComicsActivity)
+            layoutManager = GridLayoutManager(this@ComicsActivity,3)
             adapter = ComicsAdapter(quadrinhos)
         }
     }

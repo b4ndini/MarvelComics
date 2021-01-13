@@ -16,6 +16,16 @@
         android:src="@drawable/action_bar"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Data provided by Marvel. © 2014 Marvel"
+        app:layout_constraintStart_toStartOf="@id/ivActionBar"
+        app:layout_constraintEnd_toEndOf="@id/ivActionBar"
+        app:layout_constraintTop_toTopOf="@id/ivActionBar"
+        android:textColor="@color/light_red"
+        />
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -28,14 +38,17 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvComicsList"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_marginTop="10dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ivActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
         tools:itemCount="6"
         tools:listitem="@layout/comic_item" />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

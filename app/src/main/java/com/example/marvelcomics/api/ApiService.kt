@@ -18,21 +18,22 @@ import java.util.*
 
 
     private fun getInterceptorClient(): OkHttpClient {
-
+        val timeStamp = (Calendar.getInstance(TimeZone.getTimeZone("UTC")).timeInMillis / 1000L).toString()
         val logging = HttpLoggingInterceptor()
         logging.level = HttpLoggingInterceptor.Level.BODY
 
         val interceptor  = OkHttpClient.Builder()
             .addInterceptor(logging)
             .addInterceptor{chain ->
-                val tzxcs = (Calendar.getInstance(TimeZone.getTimeZone("UTC")).timeInMillis / 1000L).toString()
+
                 val newReques = chain.request()
                     .url()
                     .newBuilder()
+                    .addQueryParameter("ts", timeStamp)
                     .addQueryParameter("apikey", PUBLIC_KEY)
-                    .addQueryParameter("ts", tzxcs)
-                    .addQueryParameter("hash", "$tzxcs$PRIVATE_KEY$PUBLIC_KEY".md5())
+                    .addQueryParameter("hash", "$timeStamp$PRIVATE_KEY$PUBLIC_KEY".md5())
                     .build()
+
 
                 chain.proceed(chain.request().newBuilder().url(newReques).build())
 

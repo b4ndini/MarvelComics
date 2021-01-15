@@ -40,7 +40,7 @@
 
     <TextView
         android:id="@+id/tvComicsTitle"
-        android:layout_width="370dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="@string/comics_title"
@@ -48,17 +48,20 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/ivSeta"
-        app:layout_constraintTop_toBottomOf="@+id/ivComics" />
+        app:layout_constraintTop_toBottomOf="@+id/ivComics"
+        app:layout_constraintEnd_toEndOf="@id/tvComicsSummary"/>
 
     <TextView
         android:id="@+id/tvComicsSummary"
-        android:layout_width="370dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="@string/comics_summary"
+        tools:text="@string/comics_summary"
         android:textColor="@color/white"
         android:textSize="14sp"
+        android:layout_marginEnd="15dp"
         app:layout_constraintStart_toStartOf="@id/ivSeta"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvComicsTitle"
 
         />
@@ -68,7 +71,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Published: April 30, 2014"
+        tools:text="Published: April 30, 2014"
         android:textColor="@color/white"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@id/ivSeta"
@@ -80,7 +83,7 @@
         android:id="@+id/tvPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Price: $ 6,66"
+        tools:text="Price: $ 6,66"
         android:textColor="@color/white"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@id/ivSeta"

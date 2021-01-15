@@ -11,6 +11,8 @@ class Constants {
         const val IMAGE_SIZE_LARGE = "/portrait_xlarge."
         const val IMAGE_SIZE_FANTASTIC = "/portrait_fantastic."
         const val IMAGE_SIZE_MEDIUM = "/portrait_medium."
+        const val LANDSCAPE_SIZE_INCREDIBLE = "/landscape_incredible."
+        const val IMAGE_FULLSIZE = "/detail.jpg"
 
     }
 

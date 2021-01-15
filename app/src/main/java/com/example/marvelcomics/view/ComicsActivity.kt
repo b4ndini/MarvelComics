@@ -26,10 +26,10 @@ class ComicsActivity : AppCompatActivity() {
         viewModel.getComics()
         setupObservables()
 
-        binding.ivActionBar.setOnClickListener(){
+       /* binding.ivActionBar.setOnClickListener(){
             val intent = Intent(this, ComicsDetailActivity::class.java)
             startActivity(intent)
-        }
+        }*/
 
     }
 
@@ -44,7 +44,11 @@ class ComicsActivity : AppCompatActivity() {
      fun setupRecyclerView(quadrinhos: List<Result>) {
         binding.rvComicsList.apply{
             layoutManager = GridLayoutManager(this@ComicsActivity,3)
-            adapter = ComicsAdapter(quadrinhos)
+            adapter = ComicsAdapter(quadrinhos){
+            val intent = Intent(this@ComicsActivity, ComicsDetailActivity::class.java)
+                intent.putExtra("comicss", quadrinhos[it])
+                startActivity(intent)
+            }
         }
     }
 
@@ -66,3 +70,5 @@ class ComicsActivity : AppCompatActivity() {
 
 
     }
+
+

@@ -39,7 +39,7 @@
         android:layout_marginTop="@dimen/welcome_top_margin"
         android:text="@string/welcome_text"
         android:textColor="@color/white"
-        android:textSize="25dp"
+        android:textSize="23dp"
         app:layout_constraintEnd_toEndOf="@id/ivLoginBackground"
         app:layout_constraintStart_toStartOf="@id/ivLoginBackground"
         app:layout_constraintTop_toTopOf="@id/ivLoginBackground" />

@@ -5,16 +5,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.marvelcomics.R
 
 import com.example.marvelcomics.databinding.ComicItemBinding
-import com.example.marvelcomics.model.Comics
 import com.example.marvelcomics.model.Result
-import com.example.marvelcomics.utils.Constants.Api.IMAGE_SIZE_FANTASTIC
-import com.example.marvelcomics.utils.Constants.Api.IMAGE_SIZE_LARGE
 import com.example.marvelcomics.utils.Constants.Api.IMAGE_SIZE_MEDIUM
 
-class ComicsAdapter(val comicsList: List<Result>) : RecyclerView.Adapter<ComicsAdapter.ViewHolder>() {
+class ComicsAdapter(val comicsList: List<Result>, private val comicClicked: (Int) -> Unit) : RecyclerView.Adapter<ComicsAdapter.ViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ComicsAdapter.ViewHolder {
@@ -25,7 +21,7 @@ class ComicsAdapter(val comicsList: List<Result>) : RecyclerView.Adapter<ComicsA
     }
 
     override fun onBindViewHolder(holder: ComicsAdapter.ViewHolder, position: Int) {
-        holder.bind(comic = comicsList[position])
+        holder.bind(comic = comicsList[position], comicClicked)
 
     }
 
@@ -37,11 +33,15 @@ class ComicsAdapter(val comicsList: List<Result>) : RecyclerView.Adapter<ComicsA
 
     class ViewHolder(val binding: ComicItemBinding) :  RecyclerView.ViewHolder(binding.root){
 
-        fun bind(comic : Result):Unit = with(itemView){
+        fun bind(comic: Result, comicClicked: (Int) -> Unit):Unit = with(itemView){
 
             val imagem : String = comic.thumbnail.path + IMAGE_SIZE_MEDIUM + comic.thumbnail.extension
             binding.tvEdition.text = comic.issueNumber.toString()
             Glide.with(itemView.context).load(imagem).into(binding.ivComicImage)
+
+            binding.ivComicImage.setOnClickListener{
+                comicClicked(this@ViewHolder.adapterPosition)
+            }
 
         }
     }

@@ -15,6 +15,16 @@ class ComicsActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityComicsBinding
     private lateinit var viewModel: ComicsViewModel
+    private val comicsAdapter: ComicsAdapter by lazy{
+        ComicsAdapter{
+            val comicClicked = it
+            val intent = Intent(this@ComicsActivity, ComicsDetailActivity::class.java)
+            intent.putExtra("comicss", comicClicked)
+            startActivity(intent)
+            //chama outra activity
+        }
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,45 +32,30 @@ class ComicsActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
+
+        setupRecyclerView()
+        loadContents()
+
+    }
+
+
+
+    fun loadContents(){
         viewModel = ViewModelProvider(this).get(ComicsViewModel::class.java)
-        viewModel.getComics()
-        setupObservables()
-
-       /* binding.ivActionBar.setOnClickListener(){
-            val intent = Intent(this, ComicsDetailActivity::class.java)
-            startActivity(intent)
-        }*/
-
+        viewModel.comicsPagedList?.observe(this) {pagedList ->
+            comicsAdapter.submitList(pagedList)}
     }
 
-    fun setupObservables() {
-        viewModel.comicsLiveData.observe(this,{
-            it?.let { comics ->
-                setupRecyclerView(comics.data.results)     //pega os dados da api
-            }
-        })
-    }
-
-     fun setupRecyclerView(quadrinhos: List<Result>) {
+     fun setupRecyclerView() {
         binding.rvComicsList.apply{
             layoutManager = GridLayoutManager(this@ComicsActivity,3)
-            adapter = ComicsAdapter(quadrinhos){
-            val intent = Intent(this@ComicsActivity, ComicsDetailActivity::class.java)
-                intent.putExtra("comicss", quadrinhos[it])
-                startActivity(intent)
+            adapter = comicsAdapter
+
             }
         }
-    }
 
-    /* viewModel.comicsLiveData.observe(this,{
-         it?.let{ comics ->
-             binding.rvComicsList.apply {
-                 layoutManager = GridLayoutManager(this@ComicsActivity,3)
-                 adapter = ComicsAdapter(comics)
-             }
 
-         }
-     })*/
+
 
 
 

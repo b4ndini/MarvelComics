@@ -10,7 +10,7 @@ interface MarvelApi {
 
     @GET("comics")
     suspend fun comics(
-    @Query("limit") limite : Int = 100
+    @Query("offset") pula : Int = 0
     ): Response<Comics>
 
 

@@ -5,10 +5,10 @@ import com.example.marvelcomics.api.ResponseApi
 
 class ComicsRepository {
 
-    suspend fun getComics(): ResponseApi {
+    suspend fun getComics(pula: Int): ResponseApi {
 
           return  try{
-                val response = ApiService.marvelApi.comics()
+                val response = ApiService.marvelApi.comics(pula)
 
                 if(response.isSuccessful){
                     ResponseApi.Success(response.body())

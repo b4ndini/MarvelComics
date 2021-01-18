@@ -1,6 +1,7 @@
 package com.example.marvelcomics.model
 
 import android.os.Parcelable
+import androidx.recyclerview.widget.DiffUtil
 import kotlinx.parcelize.Parcelize
 import kotlinx.parcelize.RawValue
 
@@ -37,4 +38,19 @@ data class Result(
    // val urls: List<Url>,
     val variantDescription: String
   //  val variants: List<Variant>
-) : Parcelable
+) : Parcelable {
+
+
+    companion object{
+
+        var DIFF_CALLBACK: DiffUtil.ItemCallback<Result> = object : DiffUtil.ItemCallback<Result>(){
+            override fun areItemsTheSame(oldItem: Result, newItem: Result): Boolean {
+                return oldItem.id == newItem.id
+            }
+
+            override fun areContentsTheSame(oldItem: Result, newItem: Result): Boolean {
+                return oldItem.id == newItem.id
+            }
+        }
+    }
+}

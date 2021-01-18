@@ -67,10 +67,6 @@ class ComicsDetailActivity : AppCompatActivity() {
         Log.i("teste", "ID DO ITEM É $comics.id")
 
 
-     /*   binding.ivComics.setOnClickListener(){
-            val intent = Intent(this, ComicsPictureActivity::class.java)
-            startActivity(intent)
-        }
-  */  }
+    }
 
 }

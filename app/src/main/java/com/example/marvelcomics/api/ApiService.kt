@@ -49,23 +49,4 @@ import java.util.*
             .build()
 
     }
-
-    /*private fun getInterceptorClient(): OkHttpClient {
-
-        val interceptor  = OkHttpClient.Builder()
-            .addInterceptor{chain ->
-                val newRequest = chain.request().newBuilder()
-
-                    .addHeader("Accept","")
-                    .build()
-                chain.proceed(newRequest)
-
-            }
-        return interceptor.build()
-    }*/
-
-
-
-
-
 }

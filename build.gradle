@@ -11,7 +11,8 @@ buildscript {
             'material'         :        "1.2.1",
             'retrofit'         :        "2.9.0",
             'glide'            :        "4.11.0",
-            'coroutine'        :        "1.4.2"
+            'coroutine'        :        "1.4.2",
+            'paging'           :        "2.1.2"
     ]
 
     ext.kotlin_version = "1.4.21"

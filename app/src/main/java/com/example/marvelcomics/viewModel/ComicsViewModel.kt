@@ -28,7 +28,7 @@ class   ComicsViewModel : ViewModel(){
 
         val pagedListConfig = PagedList.Config.Builder()
             .setEnablePlaceholders(false)
-            .setPageSize(20).build()
+            .setPageSize(100).build()
 
 
             comicsPagedList = LivePagedListBuilder(marvelDataSourceFactory, pagedListConfig).build()

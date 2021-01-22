@@ -26,7 +26,7 @@ class ComicsDetailActivity : AppCompatActivity() {
        var comics = intent.getParcelableExtra<Result>("comicss")
 
         binding.tvComicsTitle.text = comics?.title ?: "No title"
-        binding.tvComicsSummary.text = comics?.description ?: "There's no description to this comics"
+        binding.tvComicsSummary.text = comics?.description ?: "There's no description for this comics"
 
         if(comics?.pageCount != 0) {
             binding.tvPages.text = "Pages: " + comics?.pageCount.toString() ?: "Pages: Not specified"
